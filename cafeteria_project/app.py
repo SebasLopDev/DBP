@@ -4,8 +4,8 @@ from sqlalchemy.exc import IntegrityError
 
 
 app = Flask(__name__)
-#app.config['DEBUG'] = True  # Activar el modo de depuración
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/store4'
+app.config['DEBUG'] = True 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/store1'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Agrega esta línea para desactivar el seguimiento de modificaciones
 app.config['SECRET_KEY'] = 'una_clave_secreta_aleatoria'
 db = SQLAlchemy(app)
@@ -13,7 +13,7 @@ db = SQLAlchemy(app)
 
 
 class Usuario(db.Model):    
-    id = db.Column(db.Integer, primary_key=True)  # Clave primaria
+    id = db.Column(db.Integer, primary_key=True)  
     nombre = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     numero_de_personas = db.Column(db.Integer, nullable=False)
@@ -33,6 +33,10 @@ def home():
 @app.route('/login')
 def login():
     return render_template('login.html')
+
+@app.route('/galeria')
+def galeria():
+    return render_template('galeria.html')
 
 # Ruta para el formulario de usuario
 @app.route('/crear_usuario', methods=['GET', 'POST'])
@@ -78,7 +82,5 @@ def admin():
 
 
 if __name__ == '__main__':
-    #app.run(debug=True)
-     with app.app_context():
-        db.create_all()  # Esto creará la tabla 'usuario' si no existe
-        app.run(debug=True)
+    app.run(debug=True)
+     
