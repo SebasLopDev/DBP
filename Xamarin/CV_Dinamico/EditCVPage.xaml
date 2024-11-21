@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CurriculumAppD.EditCVPage"
+             BackgroundColor="Black">
+    <ScrollView>
+        <StackLayout Padding="30" Spacing="15">
+
+            <Label Text="Editar CV" FontSize="24" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <!-- Campos de edición -->
+            <Editor x:Name="PerfilEditor" Placeholder="Perfil" FontSize="14" BackgroundColor="#444" TextColor="White" />
+            <Entry x:Name="TrabajoActualTitulo" Placeholder="Trabajo Actual" FontSize="14" BackgroundColor="#444" TextColor="White" />
+            <Editor x:Name="TrabajoActualDescripcion" Placeholder="Descripción Trabajo Actual" FontSize="14" BackgroundColor="#444" TextColor="White" />
+            <Entry x:Name="TrabajoAnteriorTitulo" Placeholder="Trabajo Anterior" FontSize="14" BackgroundColor="#444" TextColor="White" />
+            <Editor x:Name="TrabajoAnteriorDescripcion" Placeholder="Descripción Trabajo Anterior" FontSize="14" BackgroundColor="#444" TextColor="White" />
+            <Entry x:Name="TelefonoEntry" Placeholder="Teléfono" FontSize="14" BackgroundColor="#444" TextColor="White" />
+            <Entry x:Name="CorreoEntry" Placeholder="Correo" FontSize="14" BackgroundColor="#444" TextColor="White" />
+            <Entry x:Name="UbicacionEntry" Placeholder="Ubicación" FontSize="14" BackgroundColor="#444" TextColor="White" />
+            <Entry x:Name="LinkedInEntry" Placeholder="LinkedIn" FontSize="14" BackgroundColor="#444" TextColor="White" />
+            <Entry x:Name="EspanolEntry" Placeholder="Español" FontSize="14" BackgroundColor="#444" TextColor="White" />
+            <Entry x:Name="InglesEntry" Placeholder="Inglés" FontSize="14" BackgroundColor="#444" TextColor="White" />
+            <Entry x:Name="FrancesEntry" Placeholder="Francés" FontSize="14" BackgroundColor="#444" TextColor="White" />
+
+            <Button Text="Guardar" BackgroundColor="#006400" TextColor="White" Clicked="OnSaveClicked" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
